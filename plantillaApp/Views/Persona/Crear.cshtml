@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "Crear Persona";
+    Layout = "~/Views/Layouts/App.cshtml";
+}
+
+<div class="box">
+	<div class="box-body">
+		<form method="post" action="/Persona/Guardar" id="frmAgregarPersona">
+			<div class="row">
+				<div class="col-4">
+					<div class="form-group">
+						<label form="tCedula">Cédula:</label>
+						<input type="text" class="form-control cedula" id="tCedula" name="tCedula" placeholder="No. Cédula" />
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label form="tNombre">Nombre:</label>
+						<input type="text" class="form-control" id="tNombre" name="tNombre" placeholder="Nombre" />
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label form="tApellidos">Apellidos:</label>
+						<input type="text" class="form-control" id="tApellidos" name="tApellidos" placeholder="Apellidos" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-3">
+					<div class="form-group">
+						<label for="tTelefono">Telefono</label>
+						<input type="text" class="form-control phone" name="tTelefono" id="tTelefono" placeholder="Telefono" />
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="form-group">
+						<label for="tEmail">Correo Electronico</label>
+						<input type="email" class="form-control" name="tEmail" id="tEmail" placeholder="ejemplo@mail.com" />
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="form-group">
+						<label for="tFecha">Fecha de Nacimiento</label>
+						<input type="text" class="form-control fecha" name="tFecha" id="tFecha" placeholder="Fecha de Nacimiento" />
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="form-group">
+						<label for="tSexo">Sexo</label>
+						<select class="form-control" name="tSexo" id="tSexo">
+							<option>Seleccione...</option>
+							<option value="m">Masculino</option>
+							<option value="f">Femenino</option>
+							<option value="i">Prefiero no decirlo</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-5">
+					<div class="form-group">
+						<label for="tDireccion">Dirección</label>
+						<input type="text" class="form-control" id="tDireccion" name="tDireccion" placeholder="Calle No de casa" />
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label for="tCiudad">Ciudad</label>
+						<input type="text" class="form-control" id="tCiudad" name="tCiudad" placeholder="Ciudad" />
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="form-group">
+						<label for="tNacionalidad">Nacionalidad</label>
+						<input type="text" class="form-control" id="tNacionalidad" name="tNacionalidad" placeholder="Nacionalidad" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					@if(ViewBag.mensaje != null)
+					{
+						<div class="alert alert-warning">
+							<strong> @ViewBag.mensaje</strong>
+						</div>
+					}
+				</div>
+				<div class="col-3">
+					<button class="btn btn-block btn-success" type="submit">
+						<i class="fa fa-user-plus"></i> Agregar
+					</button>
+				</div>
+				<div class="col-3">
+					<button class="btn btn-block btn-danger" type="reset">
+						<i class="fa fa-times"></i> Cancelar
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
